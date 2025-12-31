@@ -24,8 +24,27 @@ The purpose of this product (repository) is to create a lightweight Supplier Bas
 - safe for Global South and SME suppliers
 
 ## Repository structure
-- /prompts – system prompt and assumptions
-- /intake – supplier intake questions
-- /logic – tagging and readiness rules
-- /outputs – example readiness output
+- /intake – supplier intake questions 
+- /logic – tagging library, tagging and readiness rules
+- /app - scoring logic and streamlit UI
+- /outputs – example readiness output (for later)
+- /prompts – system prompt and assumptions (for later)
+
+## Workflow Description
+
+## Input: supplier intake answers (number of questions)
+
+## Step 1 — Normalize inputs
+- Convert answers into consistent keys/values
+
+## Step 2 — Apply rule-based tags
+
+## Step 3 — Generate readiness level
+- LOW / MEDIUM / HIGH based on tag counts and CSRD exposure signals
+
+## Step 4 — Generate output brief
+- Readiness level
+- Tags triggered
+- Interpretation (1–2 sentences)
+- Top 3 next steps
 
