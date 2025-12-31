@@ -27,8 +27,8 @@ The purpose of this product (repository) is to create a lightweight Supplier Bas
 - /intake – supplier intake questions 
 - /logic – tagging library, tagging and readiness rules
 - /app - scoring logic and streamlit UI
-- /outputs – example readiness output (for later)
-- /prompts – system prompt and assumptions (for later)
+- /outputs – example readiness output (TBD - for later)
+- /prompts – system prompt and assumptions (TBD - for later)
 
 ## Workflow Description
 
