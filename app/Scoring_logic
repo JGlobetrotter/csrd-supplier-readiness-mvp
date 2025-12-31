@@ -1,0 +1,91 @@
+# scoring + interpretation
+
+
+
+score = 0
+reasons = []
+
+if tags.get("CSRD_SIGNAL"):
+    score += 2
+    reasons.append("Buyer referenced CSRD or EU reporting pressure.")
+
+if tags.get("BUYER_OPACITY_RISK"):
+    score += 2
+    reasons.append("Buyer requirements are unclear.")
+
+if tags.get("HRDD_RELEVANCE_HIGH"):
+    score += 1
+    reasons.append("Operations occur in higher-risk contexts.")
+
+if tags.get("GOVERNANCE_OWNER_GAP"):
+    score += 1
+    reasons.append("No clear internal owner for ESG/HR topics.")
+
+print("Score:", score)
+print("Reasons:")
+for r in reasons:
+    print("-", r)
+
+
+score = 0
+reasons = []
+
+
+if tags.get("CSRD_CASCADE_Signal"):
+    score += 2
+    reasons.append("explaination 1")
+
+if tags.get("BUYER_OPACITY_RISK"):
+    score += 2
+    reasons.append("explaination 2")
+
+if tags.get("HRDD_RELEVANCE_HIGH"):
+    score += 1
+    reasons.append("explaination 3")
+
+if tags.get("GOVERNANCE_OWNER_GAP"):
+    score += 1
+    reasons.append("explaination 4")
+
+if tags.get("ENVIRONMENTAL_BASELINE_GAP"):
+    score += 1
+    reasons.append("explaination 5")
+
+if tags.get("POLICY_LIGHT"):
+    score += 1
+    reasons.append("explaination 6")
+
+if tags.get("DUAL_ROLE_PRESSURE"):
+    score += 1
+    reasons.append("explaination 7")
+
+if tags.get("SUPPLIER_CONFIDENCE_LOW"):
+    score += 1
+    reasons.append("explaination 8")
+            
+print("Score:", score)
+print("Reasons:")
+for r in reasons:
+    print("-", r)  
+
+## Other Examples
+## if score >= 4:
+    ## band = "HIGH: CSRD readiness triage recommended"
+## elif score >= 2:
+    ## band = "MEDIUM: Some CSRD-driven pressure likely"
+## else:
+    ## band = "LOW: Limited signal of CSRD-driven pressure"
+
+## print("Score:", score)
+## print("Band:", band)
+## print("Why:")
+## for r in reasons:
+    ## print("-", r)
+
+
+## Additional tags to be given scores later (note)
+## "EU_EXPOSURE_NON_EU": "Non-EU supplier exposed to EU buyer/investor requests.",
+## "RISING_BUYER_DEMAND": "Requests are increasing in detail/frequency.",
+## "OWNER_GAP": "No clear internal owner for ESG/HR topics.",
+## "DATA_GAP": "Sustainability/social data tracking is missing or ad hoc.",
+## "ENV_RISK": "Environmental topics are being requested by buyers.",
