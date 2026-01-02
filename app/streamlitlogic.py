@@ -2,7 +2,7 @@
 
 import streamlit as st
 from intake.intake_questions import INTAKE_QUESTIONS
-from logic import run_screening
+from app import scoring_logic
 
 st.title("Supplier Baseline Screening (CSRD Friendly)")
 st.caption("Decision-support triage for readiness and communication.")
