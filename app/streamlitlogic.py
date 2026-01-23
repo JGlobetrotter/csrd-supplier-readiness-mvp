@@ -2,7 +2,7 @@
 
 import streamlit as st
 from intake.intake_questions import INTAKE_QUESTIONS, QUESTION_TO_KEY
-from logic import run_screening
+from logic import scoring_logic
 
 import sys
 from pathlib import Path
