@@ -79,3 +79,56 @@ INTAKE_QUESTIONS = {
   "Do you currently track any sustainability or social data?": ["Yes, structured", "Informal / ad hoc", "No"],
   "How confident do you feel responding to buyer ESG, sustainability or human rights requests?": ["Confident", "Somewhat confident", "Not confident"],
 }
+
+
+## Cell — Map sentences to stable internal keys
+
+QUESTION_TO_KEY = {
+  "Where is your company primarily operating?": "operates_in_eu",
+  "Do you sell directly or indirectly to EU-based companies or investors?": "sells_to_eu_buyers",
+  "What best describes your company size?": "company_size",
+  "Which sector best fits your operations?": "sector",
+  "Which best describes your role in the value chain today?": "value_chain_role",
+
+  "How complex is your supply chain?": "supply_chain_complexity",
+  "Do your operations or sourcing occur in regions commonly considered higher risk for labor or human-rights issues?": "hr_risk_region",
+  "Are labor conditions a material issue in your operations or sourcing?": "labor_material",
+  "Have buyers or partners asked you about environmental or climate-related topics?": "env_asked",
+  "Which environmental topics have buyers mentioned or asked about? (Select all that apply)?": "env_topics",
+
+  "Have buyers or partners recently requested ESG, sustainability, or human-rights information?": "recent_esg_requests",
+  "Have you been asked to complete questionnaires or provide information that feels new or more detailed than in the past?": "more_detailed_requests",
+  "What do you think prompted these requests?": "request_driver",
+  "Have any buyers or partners mentioned CSRD, EU sustainability reporting, or new EU sustainability laws when requesting information from you?": "csrd_mentioned",
+
+  "Who is primarily responsible for sustainability or social impact topics internally?": "internal_owner",
+  "Do you have written policies related to the environment, sustainability and labor?": "policy_status",
+  "Do you currently track any sustainability or social data?": "data_tracking",
+  "How confident do you feel responding to buyer ESG, sustainability or human rights requests?": "confidence",
+
+}
+
+answers_by_question = {
+  "Where is your company primarily operating?": "Non-EU",
+  "Do you sell directly or indirectly to EU-based companies or investors?": "Yes, indirectly",
+  "What best describes your company size?": "Medium",
+  "Which sector best fits your operations?": "Manufacturing (components / sub-assemblies)",
+  "Which best describes your role in the value chain today?": "Primarily a supplier to other companies",
+
+  "How complex is your supply chain?": "Highly multi-tiered",
+  "Do your operations or sourcing occur in regions commonly considered higher risk for labor or human-rights issues?": "Yes",
+  "Are labor conditions a material issue in your operations or sourcing?": "Somewhat",
+  "Have buyers or partners asked you about environmental or climate-related topics?": "Yes",
+  "Which environmental topics have buyers mentioned or asked about? (Select all that apply)?": "Not specified / unclear",
+
+  "Have buyers or partners recently requested ESG, sustainability, or human-rights information?": "Yes",
+  "Have you been asked to complete questionnaires or provide information that feels new or more detailed than in the past?": "Yes, significantly more detailed",
+  "What do you think prompted these requests?": "Unclear / not explained",
+  "Have any buyers or partners mentioned CSRD, EU sustainability reporting, or new EU sustainability laws when requesting information from you?": "Yes, indirectly (e.g. “new EU requirements”)",
+
+  "Who is primarily responsible for sustainability or social impact topics internally?": "No clear owner",
+  "Do you have written policies related to the environment, sustainability and labor?": "No",
+  "Do you currently track any sustainability or social data?": "Informal / ad hoc",
+  "How confident do you feel responding to buyer ESG, sustainability or human rights requests?": "Not confident",
+}
+
