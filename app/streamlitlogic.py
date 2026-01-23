@@ -2,10 +2,29 @@
 
 import streamlit as st
 from intake.intake_questions import INTAKE_QUESTIONS, QUESTION_TO_KEY
-from logic import scoring_logic
+from logic.sector_assumptions import SECTOR_BASELINE_ASSUMPTIONS
+from logic.Intake_Tag_Definitions import TAG_DEFS, derive_tags
+from logic.scoring import scoring_logic
+from logic.utils import normalize_answers
 
 import sys
 from pathlib import Path
+
+# Add parent directory to Python path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+# Now import
+from intake.intake_questions import INTAKE_QUESTIONS, QUESTION_TO_KEY
+from logic.sector_assumptions import SECTOR_BASELINE_ASSUMPTIONS
+from logic.Intake_Tag_Definitions import TAG_DEFS, derive_tags
+from logic.scoring import run_screening
+from logic.utils import normalize_answers
+
+
+
+
+
+
 
 # Add parent directory to Python path
 sys.path.insert(0, str(Path(__file__).parent.parent))
