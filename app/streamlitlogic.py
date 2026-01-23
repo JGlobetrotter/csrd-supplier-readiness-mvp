@@ -1,7 +1,7 @@
 ## Connect Streamlit UI
 
 import streamlit as st
-from intake.intake_questions import intake_questions
+from intake.intake_questions import INTAKE_QUESTIONS, QUESTION_TO_KEY
 from app import scoring_logic
 
 st.title("Supplier Baseline Screening (CSRD Friendly)")
