@@ -54,6 +54,6 @@ tags_dict = {t: True for t in applied_tags}
 results = run_screening(tags_dict)
     
 st.subheader("Results")
-    st.json(results)  # You can prettify this later
+st.json(results)  # You can prettify this later
 
 
