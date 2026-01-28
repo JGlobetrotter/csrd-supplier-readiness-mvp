@@ -41,12 +41,14 @@ if st.button("Run screening"):
     # Normalize answers to internal keys
     normalized = normalize_answers(st.session_state.answers)
     
-    # Derive tags
-    applied_tags = derive_tags(normalized)
+    
 ### new line testing streamlit below
     st.write("applied_tags:", applied_tags, type(applied_tags))
+    applied_tags = derive_tags(normalized) or []
+tags_dict = {t: True for t in applied_tags}
+
     
-    tags_dict = {t: True for t in applied_tags}
+  
     
     # Run screening
     results = run_screening(tags_dict)
