@@ -43,8 +43,9 @@ if st.button("Run screening"):
     
     
 ### new line testing streamlit below
-    st.write("applied_tags:", applied_tags, type(applied_tags))
+    
     applied_tags = derive_tags(normalized) or []
+    st.write("applied_tags:", applied_tags, type(applied_tags))
 tags_dict = {t: True for t in applied_tags}
 
     
