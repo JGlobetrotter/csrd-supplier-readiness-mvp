@@ -13,29 +13,27 @@ from logic.Intake_Tag_DefinitionsAssumptions import (
     derive_tags,
     SECTOR_BASELINE_ASSUMPTIONS,
 )
-from logic.utils import normalize_answers 
+from logic.utils import normalize_answers
 
-
-
-# --- TEMP: replace this with your real run_screening import ---
+# --- TEMP: stub so the app loads even if real screening isn't wired yet ---
 def run_screening(tags_dict: dict) -> dict:
-    """
-    Temporary stub so the app loads.
-    Replace with your real run_screening implementation/import.
-    """
     return {
         "status": "ok",
         "tags_received": list(tags_dict.keys()),
-        "note": "Replace stub run_screening() with real logic.",
+        "note": "Replace stub run_screening() with real logic when ready.",
     }
-# -------------------------------------------------------------
+# ------------------------------------------------------------------------
 
 st.title("Supplier Baseline Screening (CSRD Friendly)")
 st.caption("Decision-support triage for readiness and communication.")
 
-# Initialize session state for answers
+# Initialize session state (prevents KeyErrors on first load)
 if "answers" not in st.session_state:
     st.session_state.answers = {}
+if "results" not in st.session_state:
+    st.session_state.results = None
+if "applied_tags" not in st.session_state:
+    st.session_state.applied_tags = []
 
 st.header("Section A: Supplier Profile")
 
@@ -55,17 +53,11 @@ for question_text, options in INTAKE_QUESTIONS.items():
             for assumption in SECTOR_BASELINE_ASSUMPTIONS[answer]:
                 st.markdown(f"- {assumption}")
 
-# Keep these in session_state so they survive reruns cleanly
-if "results" not in st.session_state:
-    st.session_state.results = None
-if "applied_tags" not in st.session_state:
-    st.session_state.applied_tags = []
-
 if st.button("Run screening"):
     # Normalize answers to internal keys
     normalized = normalize_answers(st.session_state.answers)
 
-    # Derive tags
+    # Derive tags (always produce a list)
     applied_tags = derive_tags(normalized) or []
     st.session_state.applied_tags = applied_tags
 
@@ -75,16 +67,15 @@ if st.button("Run screening"):
     # Run screening
     st.session_state.results = run_screening(tags_dict)
 
-# Debug + output section (safe to render even before button click)
+# Debug section (safe even before button click)
 with st.expander("Debug", expanded=False):
-     st.write("applied_tags:", st.session_state.applied_tags, type(st.session_state.applied_tags))
-    
-
-
+    st.write("applied_tags:", st.session_state.applied_tags)
+    st.write("type(applied_tags):", str(type(st.session_state.applied_tags)))
 
 st.subheader("Results")
 if st.session_state.results is None:
     st.info("Click **Run screening** to generate results.")
 else:
     st.json(st.session_state.results)
+
 
