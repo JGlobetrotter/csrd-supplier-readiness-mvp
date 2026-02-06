@@ -15,13 +15,16 @@ from logic.Intake_Tag_DefinitionsAssumptions import (
 )
 from logic.utils import normalize_answers
 
+from logic.scoringnextstepsgenerator import run_screening
+
+
 # --- TEMP: stub so the app loads even if real screening isn't wired yet ---
-def run_screening(tags_dict: dict) -> dict:
-    return {
-        "status": "ok",
-        "tags_received": list(tags_dict.keys()),
-        "note": "Replace stub run_screening() with real logic when ready.",
-    }
+# def run_screening(tags_dict: dict) -> dict:
+    # return {
+       # # "status": "ok",
+        # "tags_received": list(tags_dict.keys()),
+       # "note": "Replace stub run_screening() with real logic when ready.",
+   # }
 # ------------------------------------------------------------------------
 
 st.title("Supplier Baseline Screening (CSRD Friendly)")
