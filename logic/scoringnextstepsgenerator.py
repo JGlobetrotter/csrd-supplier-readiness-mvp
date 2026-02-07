@@ -65,7 +65,8 @@ def run_screening(tags: dict) -> dict:
 # --- Output --- taken out as test
 print("\nScore:", score)
 print("Band:", band)
-print("Suggested Next Steps:")
+print("why:", reasons)
+# print("Suggested Next Steps:")
 
 
 
