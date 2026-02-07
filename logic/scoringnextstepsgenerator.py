@@ -1,55 +1,66 @@
 
 
-# --- Convert list -> dict for scoring (True/False flags) ---
-tags = {t: True for t in applied_tags}
-
+# --- Convert list -> dict for scoring 
 # --- Scoring + reasons ---
-score = 0
-reasons = []
 
-if tags.get("CSRD_CASCADE_SIGNAL"):
-    score += 2
-    reasons.append("CSRD readiness activities strongly recommended.")
 
-if tags.get("EU_EXPOSURE_NON_EU"):
-    score+= 2
-    reasons.append("EU business links suggestions additional vulnerability to CSRD - action recommended")
+def run_screening(tags: dict) -> dict:
+    tags = tags or {}
 
-if tags.get("BUYER_OPACITY_RISK"):
-    score += 2
-    reasons.append("Clients or buyers are expressing conflicting or confusing requests.")
+    score = 0
+    reasons = []
 
-if tags.get("HRDD_RELEVANCE_HIGH"):
-    score += 1
-    reasons.append("Human Rights and Labor activity strengthening recommended")
+    if tags.get("CSRD_CASCADE_SIGNAL"):
+        score += 2
+        reasons.append("CSRD readiness activities strongly recommended.")
 
-if tags.get("OWNER_GAP"):
-    score += 1
-    reasons.append("Strengthen responsibility linkages to reporting and compliance")
+    if tags.get("EU_EXPOSURE_NON_EU"):
+        score += 2
+        reasons.append("EU business links suggest additional CSRD vulnerability.")
 
-if tags.get("ENVIRONMENTAL_BASELINE_GAP"):
-    score += 1
-    reasons.append("Suggest to draft environmental compliance processes to create a baseline")
+    if tags.get("BUYER_OPACITY_RISK"):
+        score += 2
+        reasons.append("Buyers are expressing conflicting or confusing requests.")
 
-if tags.get("POLICY_LIGHT"):
-    score += 1
-    reasons.append("Draft or strengthen Policy documents")
+    if tags.get("HRDD_RELEVANCE_HIGH"):
+        score += 1
+        reasons.append("Human rights and labor strengthening recommended.")
 
-if tags.get("DUAL_ROLE_PRESSURE"):
-    score += 1
-    reasons.append("Your organization seems to be dealing with pressures coming from multiple angles.")
+    if tags.get("OWNER_GAP"):
+        score += 1
+        reasons.append("Responsibility gaps detected.")
 
-if tags.get("SUPPLIER_CONFIDENCE_LOW"):
-    score += 1
-    reasons.append("You don't have a lot of confidence at present - strongly suggest external advisory or support.")
+    if tags.get("ENVIRONMENTAL_BASELINE_GAP"):
+        score += 1
+        reasons.append("Environmental baseline processes missing.")
 
-# --- Band logic ---
-if score >= 12:
-    band = "HIGH: Sustainability readiness triage recommended"
-elif score >= 5:
-    band = "MEDIUM: Some Sustainability-driven pressure likely"
-else:
-    band = "LOW: Limited signal of Sustainability-driven pressure"
+    if tags.get("POLICY_LIGHT"):
+        score += 1
+        reasons.append("Policy documentation is light or missing.")
+
+    if tags.get("DUAL_ROLE_PRESSURE"):
+        score += 1
+        reasons.append("Multiple pressure signals detected.")
+
+    if tags.get("SUPPLIER_CONFIDENCE_LOW"):
+        score += 1
+        reasons.append("Low confidence suggests external support may help.")
+
+    # --- Band logic (unchanged) ---
+    if score >= 12:
+        band = "HIGH: Sustainability readiness triage recommended"
+    elif score >= 5:
+        band = "MEDIUM: Some Sustainability-driven pressure likely"
+    else:
+        band = "LOW: Limited signal of Sustainability-driven pressure"
+
+    return {
+        "score": score,
+        "band": band,
+        "why": reasons,
+        "tags_received": [k for k, v in tags.items() if v],
+    }
+
 
 # --- Output ---
 print("\nScore:", score)
