@@ -93,8 +93,8 @@ try:
     from logic.utils import normalize_answers as REAL_NORMALIZE_ANSWERS
     normalize_answers = REAL_NORMALIZE_ANSWERS
 
-    from logic.scoringnextstepsgenerator import run_screening as REAL_RUN_SCREENING
-    run_screening = REAL_RUN_SCREENING
+    from logic.scoringnextstepsgenerator import run_screening 
+    run_screening = RUN_SCREENING
 
 except Exception as e:
     import_error = e  # shown in Debug expander; app still loads
