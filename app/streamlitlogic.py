@@ -1,34 +1,18 @@
 import streamlit as st
 
-# ------------------------------------------------------------
-# Safe imports with fallbacks (so the app ALWAYS loads)
-# ------------------------------------------------------------
-import_error = None
+# Questions
+from intake.intake_questions import INTAKE_QUESTIONS, QUESTION_TO_KEY
+# normalization
+from logic.utils import normalize_answers
+# tag derivation
+from logic.Intake_Tag_DefinitionsAssumptions import (
+    derive_tags,
+    SECTOR_BASELINE_ASSUMPTIONS,
+)
+# scoring
+from logic.scoringnextstepsgenerator import run_screening
 
-# Defaults (stubs) used if imports fail
-INTAKE_QUESTIONS = {
-    "Which sector best fits your operations?": [
-        "", "Manufacturing", "Tourism", "Agriculture", "Services", "Other"
-    ],
-    "Where are your main operations located?": [
-        "", "EU", "Non-EU (sells into EU)", "Non-EU (no EU exposure)", "Not sure"
-    ],
-    "Do you have a sustainability/ESG lead or team?": [
-        "", "Yes", "No", "In progress"
-    ],
-}
-QUESTION_TO_KEY = {
-    "Which sector best fits your operations?": "sector",
-    "Where are your main operations located?": "location",
-    "Do you have a sustainability/ESG lead or team?": "owner",
-}
-
-SECTOR_BASELINE_ASSUMPTIONS = {
-    "Manufacturing": ["Likely complex supply chain", "Higher CSRD cascade exposure"],
-    "Tourism": ["Higher reputational risk", "Supplier footprint (travel, food, services)"],
-    "Agriculture": ["Land/water impacts likely material", "Labor & seasonal workforce risks"],
-    "Services": ["Lower direct footprint", "Data/privacy risk may be higher if AI used"],
-}
+#### Start actual streamlit code
 
 def normalize_answers(answers: dict) -> dict:
     """Fallback normalizer: maps question text -> internal keys."""
