@@ -1,4 +1,33 @@
+
 import streamlit as st
+import inspect
+import os
+
+# debug panel -- remove later
+def debug_panel(tags=None, raw=None, normalized=None, fn=None):
+    with st.expander("🔧 Debug Panel (safe to ignore)"):
+        st.write("App file:", __file__)
+        st.write("Working directory:", os.getcwd())
+
+        if fn is not None:
+            st.write("Function loaded from:", inspect.getsourcefile(fn))
+
+        if tags is not None:
+            st.write("UI → Logic input (tags):", tags)
+            st.write("Input type:", type(tags))
+
+        if raw is not None:
+            st.write("Logic → UI raw output:", raw)
+            st.write(
+                "Raw output keys:",
+                list(raw.keys()) if isinstance(raw, dict) else type(raw)
+            )
+
+        if normalized is not None:
+            st.write("Normalized output:", normalized)
+
+# other imports below
+
 
 # Questions
 from intake.intake_questions import INTAKE_QUESTIONS, QUESTION_TO_KEY
