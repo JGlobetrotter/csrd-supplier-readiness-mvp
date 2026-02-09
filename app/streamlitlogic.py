@@ -31,15 +31,12 @@ def debug_panel(tags=None, raw=None, normalized=None, fn=None):
 
 # Questions
 
-from intake.intake_questions import INTAKE_QUESTIONS, QUESTION_TO_KEY
-
-
-
+from intake.intake_questions import (INTAKE_QUESTIONS, QUESTION_TO_KEY)
 
 # normalization
-from logic.utils import normalize_answers
+from logic.logic.utils import normalize_answers
 # tag derivation
-from logic.Intake_Tag_DefinitionsAssumptions import (
+from logic.logic.Intake_Tag_DefinitionsAssumptions import (
     derive_tags,
     SECTOR_BASELINE_ASSUMPTIONS,
 )
