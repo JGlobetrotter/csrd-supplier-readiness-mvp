@@ -1,7 +1,21 @@
 
+
+
+
+
+
 import streamlit as st
 import inspect
+
 import os
+import sys
+
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if REPO_ROOT not in sys.path:
+    sys.path.insert(0, REPO_ROOT)
+
+
+
 
 # debug panel -- remove later
 def debug_panel(tags=None, raw=None, normalized=None, fn=None):
