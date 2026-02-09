@@ -120,7 +120,35 @@ except Exception as e:
 # Streamlit UI
 # ------------------------------------------------------------
 st.title("Supplier Baseline Screening (CSRD Friendly)")
-st.caption("Decision-support triage for readiness and communication.")
+st.caption(""""
+This Sustainability Readiness tool is a fast, decision-grade diagnostic designed to help SME and supplier companies understand whether
+they are prepared for today’s sustainability, human rights, and climate-related reporting expectations — especially under the EU Corporate
+Sustainability Reporting Directive (CSRD).
+
+Rather than asking suppliers to “do everything,” the tool focuses on what actually matters:
+data availability, governance maturity, risk exposure, and the ability to meet near-term disclosure and due-diligence requirements.
+
+The output is a clear, comparable readiness profile that highlights gaps, flags material risks, and distinguishes between suppliers
+who need support, monitoring, or escalation.
+
+Built for real supply chains—not idealized ones—the tool is practical, proportionate, and globally usable. It translates CSRD and related expectations into supplier-appropriate signals, reducing noise, survey fatigue, and false confidence. For buyers, it provides defensible evidence for risk-based prioritization, engagement strategies, and transition planning. For suppliers, it offers clarity on expectations and a realistic path toward improvement—without turning sustainability into an unmanageable compliance burden.
+
+This purpose of this product
+
+This product can also serve screens supplier readiness to be onboarded
+to buyer platforms, identifies weak points for triage before risk is metabolized, and
+prioritizes next steps for investment of resources.
+All Questions are multiple choice.
+
+## multiple choice only
+## no legal interpretation required from the supplier
+## aligned to what buyers actually screen for first under CSRD / HRDD
+## safe for Global South and SME suppliers
+
+Disclaimer : This is a decision support tool. It is not meant to be legal advice, or a final compliance /reporting determination.
+
+"""
+)
 
 # Session state init
 if "answers" not in st.session_state:
