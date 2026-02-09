@@ -30,7 +30,9 @@ def debug_panel(tags=None, raw=None, normalized=None, fn=None):
 
 
 # Questions
-from intake/intake_questions import INTAKE_QUESTIONS = {} , QUESTION_TO_KEY = {}
+
+from intake.intake_questions import INTAKE_QUESTIONS, QUESTION_TO_KEY
+
 
 
 
