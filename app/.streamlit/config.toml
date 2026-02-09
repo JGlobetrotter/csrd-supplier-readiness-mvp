@@ -1,0 +1,1 @@
+toml [client] showErrorDetails = true [logger] level = "debug"
