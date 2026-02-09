@@ -1,61 +1,63 @@
-import gradio as gr
-import importlib.util
-from pathlib import Path
+#save gradio as a note
+
+# import gradio as gr
+# import importlib.util
+# from pathlib import Path
 
 #  Put the path to your logic file here (relative to repo root)
-LOGIC_FILE = Path("logic/scoringnextstepsgenerator.py")  # <-- edit if needed
+#LOGIC_FILE = Path("logic/scoringnextstepsgenerator.py")  # <-- edit if needed
 
-def load_run_screening():
-    if not LOGIC_FILE.exists():
-        raise FileNotFoundError(f"Can't find: {LOGIC_FILE.resolve()}")
+#def load_run_screening():
+    #if not LOGIC_FILE.exists():
+       # raise FileNotFoundError(f"Can't find: {LOGIC_FILE.resolve()}")
 
-    spec = importlib.util.spec_from_file_location("screening_module", str(LOGIC_FILE))
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)  # type: ignore
-    if not hasattr(mod, "run_screening"):
-        raise AttributeError("Your logic file does not define run_screening(tags: dict)")
-    return mod.run_screening
+    #spec = importlib.util.spec_from_file_location("screening_module", str(LOGIC_FILE))
+    #mod = importlib.util.module_from_spec(spec)
+    #spec.loader.exec_module(mod)  # type: ignore
+    #if not hasattr(mod, "run_screening"):
+        #raise AttributeError("Your logic file does not define run_screening(tags: dict)")
+    #return mod.run_screening
 
-RUN_SCREENING = load_run_screening()
+#RUN_SCREENING = load_run_screening()
 
-TAG_OPTIONS = [
-    "CSRD_CASCADE_SIGNAL",
-    "EU_EXPOSURE_NON_EU",
-    "BUYER_OPACITY_RISK",
-    "HRDD_RELEVANCE_HIGH",
-    "OWNER_GAP",
-    "ENVIRONMENTAL_BASELINE_GAP",
-]
+#TAG_OPTIONS = [
+    #"CSRD_CASCADE_SIGNAL",
+    #"EU_EXPOSURE_NON_EU",
+    #"BUYER_OPACITY_RISK",
+    #"HRDD_RELEVANCE_HIGH",
+    #"OWNER_GAP",
+    #"ENVIRONMENTAL_BASELINE_GAP",
+#]
 
-def ui_run(selected_tags):
-    tags = {t: True for t in (selected_tags or [])}
-    result = RUN_SCREENING(tags) or {}
+#def ui_run(selected_tags):
+    #tags = {t: True for t in (selected_tags or [])}
+    #result = RUN_SCREENING(tags) or {}
 
-    score = result.get("score", 0)
+    #score = result.get("score", 0)
 
-    reasons = result.get("reasons") or result.get("why") or []
-    if isinstance(reasons, str):
-        reasons = [reasons]
+   # reasons = result.get("reasons") or result.get("why") or []
+   # if isinstance(reasons, str):
+       # reasons = [reasons]
 
-    steps = result.get("recommended_next_steps") or []
-    if isinstance(steps, str):
-        steps = [steps]
+   # steps = result.get("recommended_next_steps") or []
+   # if isinstance(steps, str):
+      #  steps = [steps]
 
-    reasons_text = "\n".join(f"- {r}" for r in reasons) if reasons else "(none)"
-    steps_text = "\n".join(f"- {s}" for s in steps) if steps else "(none)"
+  #  reasons_text = "\n".join(f"- {r}" for r in reasons) if reasons else "(none)"
+  #  steps_text = "\n".join(f"- {s}" for s in steps) if steps else "(none)"
 
-    return str(score), reasons_text, steps_text
+  #  return str(score), reasons_text, steps_text
 
-demo = gr.Interface(
-    fn=ui_run,
-    inputs=gr.CheckboxGroup(choices=TAG_OPTIONS, label="Select tags"),
-    outputs=[
-        gr.Textbox(label="Score"),
-        gr.Textbox(label="Reasons", lines=8),
-        gr.Textbox(label="Recommended next steps", lines=8),
-    ],
-    title="CSRD Supplier Readiness MVP",
-)
+#demo = gr.Interface(
+    #fn=ui_run,
+    #inputs=gr.CheckboxGroup(choices=TAG_OPTIONS, label="Select tags"),
+    #outputs=[
+       # gr.Textbox(label="Score"),
+      #  gr.Textbox(label="Reasons", lines=8),
+       # gr.Textbox(label="Recommended next steps", lines=8),
+  #  ],
+  #  title="CSRD Supplier Readiness MVP",
+#)
 
 if __name__ == "__main__":
     demo.launch(share=True, debug=True)
