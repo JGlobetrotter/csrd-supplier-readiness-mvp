@@ -57,27 +57,27 @@ def run_screening(tags: dict) -> dict:
     return {
         "score": score,
         "band": band,
-        "why": reasons,
+        "reasons": reasons,
         "tags_received": [k for k, v in tags.items() if v],
     }
 
 
 # --- Output --- taken out as test
-print("\nScore:", score)
-print("Band:", band)
-print("why:", reasons)
+# print("\nScore:", score)
+# print("Band:", band)
+# print("reasons:", reasons)
 # print("Suggested Next Steps:")
 
 
 
 # --- Print sector baseline assumptions ---
-sector = a.get("sector")
-if sector and sector in SECTOR_BASELINE_ASSUMPTIONS:
-    print(f"\nBaseline assumptions for '{sector}':")
-    for assumption in SECTOR_BASELINE_ASSUMPTIONS[sector]:
-        print(f"  - {assumption}")
-else:
-    print(f"\nNo specific baseline assumptions found for sector: {sector}")
+# sector = a.get("sector")
+# if sector and sector in SECTOR_BASELINE_ASSUMPTIONS:
+    # print(f"\nBaseline assumptions for '{sector}':")
+    # for assumption in SECTOR_BASELINE_ASSUMPTIONS[sector]:
+        # print(f"  - {assumption}")
+# else:
+    # print(f"\nNo specific baseline assumptions found for sector: {sector}")
 
 # --- End print sector baseline assumptions ---
 
