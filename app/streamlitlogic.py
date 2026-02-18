@@ -52,7 +52,7 @@ from logic.utils import normalize_answers
 
 # tag derivation
 
-from logic.logic.Intake_Tag_DefinitionsAssumptions import (
+from logic.Intake_Tag_DefinitionsAssumptions import (
     derive_tags,
     SECTOR_BASELINE_ASSUMPTIONS,
 )
