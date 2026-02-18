@@ -90,9 +90,9 @@ print("Recommended Next Steps:")
 
 # --- Print applied tags after the main assessment ---
 print("\nAll applied tags:")
-for t in applied_tags:
-    print(f"- {t}")
-print("Full applied tags list for reference:", applied_tags)
+# for t in applied_tags:
+    # print(f"- {t}")
+# print("Full applied tags list for reference:", applied_tags)
 
 
 if reasons:
