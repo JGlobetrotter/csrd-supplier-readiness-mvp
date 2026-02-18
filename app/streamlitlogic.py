@@ -59,11 +59,11 @@ from logic.Intake_Tag_DefinitionsAssumptions import (
 # scoring
 from logic.scoringnextstepsgenerator import run_screening
 
-    from logic.utils import normalize_answers as REAL_NORMALIZE_ANSWERS
-    normalize_answers = REAL_NORMALIZE_ANSWERS
+from logic.utils import normalize_answers as REAL_NORMALIZE_ANSWERS
+normalize_answers = REAL_NORMALIZE_ANSWERS
 
-    from logic.scoringnextstepsgenerator import run_screening 
-    run_screening = RUN_SCREENING
+from logic.scoringnextstepsgenerator import run_screening 
+run_screening = RUN_SCREENING
 
 #### Start actual streamlit code
 
