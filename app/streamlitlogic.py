@@ -49,7 +49,7 @@ from intake.intake_questions import (INTAKE_QUESTIONS, QUESTION_TO_KEY)
 
 # normalization of logic
 
-from logic.utils import normalize_answers
+
 
 from logic.logic.utils import normalize_answers
 # tag derivation
