@@ -82,11 +82,11 @@ def run_screening(tags: dict) -> dict:
 # --- End print sector baseline assumptions ---
 
 print("Recommended Next Steps:")
-if reasons:
-    for r in reasons:
-        print("- ", r)
-else:
-    print("- (no reasons triggered; check whether applied_tags is empty)")
+# if reasons:
+    # for r in reasons:
+       # print("- ", r)
+#else:
+    # print("- (no reasons triggered; check whether applied_tags is empty)")
 
 # --- Print applied tags after the main assessment ---
 print("\nAll applied tags:")
