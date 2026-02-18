@@ -125,7 +125,7 @@ try:
     normalize_answers = REAL_NORMALIZE_ANSWERS
 
     from logic.scoringnextstepsgenerator import run_screening 
-    # run_screening = RUN_SCREENING
+    run_screening = run_screening
 
 except Exception as e:
     import_error = e  # shown in Debug expander; app still loads
