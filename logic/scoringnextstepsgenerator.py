@@ -95,11 +95,11 @@ print("\nAll applied tags:")
 # print("Full applied tags list for reference:", applied_tags)
 
 
-if reasons:
-    for r in reasons:
-        print("- ", r)
-else:
-    print("- (no reasons triggered; check whether applied_tags is empty)")
+# if reasons:
+    # for r in reasons:
+        # print("- ", r)
+# else:
+    # print("- (no reasons triggered; check whether applied_tags is empty)")
 
 
 # Additional tags to be given scores later (note)
