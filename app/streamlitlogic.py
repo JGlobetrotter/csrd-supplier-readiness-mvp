@@ -59,11 +59,6 @@ from logic.Intake_Tag_DefinitionsAssumptions import (
 # scoring
 from logic.scoringnextstepsgenerator import run_screening
 
-from logic.utils import normalize_answers as REAL_NORMALIZE_ANSWERS
-normalize_answers = REAL_NORMALIZE_ANSWERS
-
-from logic.scoringnextstepsgenerator import run_screening 
-run_screening = RUN_SCREENING
 
 #### Start actual streamlit code
 
@@ -127,6 +122,11 @@ try:
     derive_tags = REAL_DERIVE_TAGS
     SECTOR_BASELINE_ASSUMPTIONS = REAL_SECTOR_BASELINE_ASSUMPTIONS
 
+    from logic.utils import normalize_answers as REAL_NORMALIZE_ANSWERS
+    normalize_answers = REAL_NORMALIZE_ANSWERS
+
+    from logic.scoringnextstepsgenerator import run_screening 
+    run_screening = RUN_SCREENING
 
     
 except Exception as e:
