@@ -219,7 +219,7 @@ with st.expander("Debug", expanded=False):
     st.write("normalized:", st.session_state.normalized)
     st.write("applied_tags:", st.session_state.applied_tags)
 
- Results
+Results
 st.subheader("Results")
  if st.session_state.results is None:
     st.info("Click **Run screening** to generate results.")
