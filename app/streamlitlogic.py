@@ -164,7 +164,7 @@ Rather than asking suppliers to 'do everything,' the tool focuses on what actual
 
 The output is a clear, comparable readiness profile that highlights gaps, flags material risks, and distinguishes between suppliers who need support, monitoring, or escalation.
 
-Built for real supply chains—not idealized ones—the tool is practical, proportionate, and globally usable. It translates CSRD and related expectations into supplier-appropriate signals, reducing noise, survey fatigue, and false confidence. For buyers, it provides defensible evidence for risk-based prioritization, engagement strategies, and transition planning. For suppliers, it offers clarity on expectations and a realistic path toward improvement—without turning sustainability into an unmanageable compliance burden..
+Built for real supply chains (not idealized ones) the tool is practical, proportionate, and globally usable. It translates CSRD and related expectations into supplier-appropriate signals, reducing noise, survey fatigue, and false confidence. For buyers, it provides defensible evidence for risk-based prioritization, engagement strategies, and transition planning. For suppliers, it offers clarity on expectations and a realistic path toward improvement—without turning sustainability into an unmanageable compliance burden..
 
 This product can also serve screens supplier readiness to be onboarded
 to buyer platforms, identifies weak points for triage before risk is metabolized, and
