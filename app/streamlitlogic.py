@@ -240,7 +240,7 @@ else:
     if isinstance(why, list) and why:
         st.markdown("**Why:**")
         for item in why:
-            st.markdown(f"- {item
+            st.markdown(f"- {item}
     with st.expander("Raw results JSON", expanded=False):
 
 
