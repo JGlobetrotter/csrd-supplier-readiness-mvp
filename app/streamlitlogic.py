@@ -160,7 +160,7 @@ This Sustainability Readiness tool is a fast, decision-grade diagnostic designed
 they are prepared for current sustainability, human rights, and climate-related reporting expectations - especially under the EU Corporate
 Sustainability Reporting Directive (CSRD).
 
-Rather than asking suppliers to “do everything,” the tool focuses on what actually matters: data availability, governance maturity, risk exposure, and the ability to meet near-term disclosure and due-diligence requirements.
+Rather than asking suppliers to 'do everything,' the tool focuses on what actually matters: data availability, governance maturity, risk exposure, and the ability to meet near-term disclosure and due-diligence requirements.
 
 The output is a clear, comparable readiness profile that highlights gaps, flags material risks, and distinguishes between suppliers who need support, monitoring, or escalation.
 
