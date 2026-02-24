@@ -20,7 +20,7 @@ if not st.session_state.authenticated:
     st.stop()
 
 # ---- real app below ----
-st.title("Private Diagnostic")
+st.title("Supplier Baseline Screening (CSRD friendly")
 
 
 
@@ -154,8 +154,8 @@ except Exception as e:
 # ------------------------------------------------------------
 # Streamlit UI
 # ------------------------------------------------------------
-st.title("Supplier Baseline Screening (CSRD Friendly)")
-st.caption(""""
+
+st.caption""
 This Sustainability Readiness tool is a fast, decision-grade diagnostic designed to help SME and supplier companies understand whether
 they are prepared for today’s sustainability, human rights, and climate-related reporting expectations — especially under the EU Corporate
 Sustainability Reporting Directive (CSRD).
@@ -175,10 +175,10 @@ to buyer platforms, identifies weak points for triage before risk is metabolized
 prioritizes next steps for investment of resources.
 All Questions are multiple choice.
 
-## multiple choice only
-## no legal interpretation required from the supplier
-## aligned to what buyers actually screen for first under CSRD / HRDD
-## safe for Global South and SME suppliers
+# multiple choice only
+# no legal interpretation required from the supplier
+# aligned to what buyers actually screen for first under CSRD / HRDD
+# safe for Global South and SME suppliers
 
 Disclaimer : This is a decision support tool. It is not meant to be legal advice, or a final compliance /reporting determination.
 
