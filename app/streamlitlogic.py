@@ -221,7 +221,7 @@ with st.expander("Debug", expanded=False):
 
 Results
 st.subheader("Results")
- if st.session_state.results is None:
+if st.session_state.results is None:
     st.info("Click **Run screening** to generate results.")
 else:
     results = st.session_state.results
