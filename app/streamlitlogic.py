@@ -168,8 +168,6 @@ Built for real supply chains (not idealized ones), the tool is practical, propor
 
 This product can also serve to screen supplier readiness to be onboarded to buyer platforms, identify weak points for triage before risk is metabolized, and prioritize next steps for investment of resources.
 
-# All questions are multiple choice.
-
 Additional Notes:
 - No legal interpretation required from the supplier  
 - Aligned to what buyers actually screen for first under CSRD / HRDD  
