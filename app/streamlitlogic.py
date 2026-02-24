@@ -221,24 +221,24 @@ with st.expander("Debug", expanded=False):
 
 # Results
 st.subheader("Results")
-if st.session_state.results is None:
+ if st.session_state.results is None:
     st.info("Click **Run screening** to generate results.")
 else:
     results = st.session_state.results
     # Friendly view if keys exist
-    score = results.get("score") if isinstance(results, dict) else None
-    band = results.get("band") if isinstance(results, dict) else None
-    why = results.get("why") if isinstance(results, dict) else None
+   # score = results.get("score") if isinstance(results, dict) else None
+   # band = results.get("band") if isinstance(results, dict) else None
+  #  why = results.get("why") if isinstance(results, dict) else None
 
-    if score is not None:
+  #  if score is not None:
         st.metric("Score", score)
-    if band:
-        st.success(f"Band: {band}")
+   # if band:
+    #    st.success(f"Band: {band}")
 
-    if isinstance(why, list) and why:
-        st.markdown("**Why:**")
-        for item in why:
-            st.markdown(f"- {item
+    #if isinstance(why, list) and why:
+    #    st.markdown("**Why:**")
+     #   for item in why:
+     #       st.markdown(f"- {item
 
 
 # put here feb 24 --- Convert list -> dict for scoring (True/False flags) ---
