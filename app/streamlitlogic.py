@@ -20,7 +20,7 @@ if not st.session_state.authenticated:
     st.stop()
 
 # ---- real app below ----
-st.title("Supplier Baseline Screening (CSRD friendly)"
+st.title("Supplier Baseline Screening (CSRD friendly")
 
 
 
