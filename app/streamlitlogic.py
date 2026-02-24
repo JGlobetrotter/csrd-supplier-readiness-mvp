@@ -79,6 +79,8 @@ from logic.Intake_Tag_DefinitionsAssumptions import (
 from logic.scoringnextstepsgenerator import run_screening
 
 
+
+
 #### Start actual streamlit code
 
 def normalize_answers(answers: dict) -> dict:
@@ -128,24 +130,37 @@ def run_screening(tags_dict: dict) -> dict:
     return {"score": score, "band": band, "why": why, "tags_received": list(tags_dict.keys())}
 
 # Try real imports; if any fail, we keep the stubs above.
+
 try:
-    from intake.intake_questions import INTAKE_QUESTIONS as REAL_INTAKE_QUESTIONS, QUESTION_TO_KEY as REAL_QUESTION_TO_KEY
-    INTAKE_QUESTIONS = REAL_INTAKE_QUESTIONS
-    QUESTION_TO_KEY = REAL_QUESTION_TO_KEY
-
+    from intake.intake_questions import INTAKE_QUESTIONS, QUESTION_TO_KEY
     from logic.Intake_Tag_DefinitionsAssumptions import (
-        TAG_DEFS,  # unused here but fine if present
-        derive_tags as REAL_DERIVE_TAGS,
-        SECTOR_BASELINE_ASSUMPTIONS as REAL_SECTOR_BASELINE_ASSUMPTIONS,
+        derive_tags,
+        SECTOR_BASELINE_ASSUMPTIONS,
     )
-    derive_tags = REAL_DERIVE_TAGS
-    SECTOR_BASELINE_ASSUMPTIONS = REAL_SECTOR_BASELINE_ASSUMPTIONS
+    from logic.utils import normalize_answers
+    from logic.scoringnextstepsgenerator import run_screening
+except Exception as e:
+    import_error = e
+    st.warning(f"⚠️ Import error: {e}")
+    
+ # try:
+    # from intake.intake_questions import INTAKE_QUESTIONS as REAL_INTAKE_QUESTIONS, QUESTION_TO_KEY as REAL_QUESTION_TO_KEY
+    # INTAKE_QUESTIONS = REAL_INTAKE_QUESTIONS
+    # QUESTION_TO_KEY = REAL_QUESTION_TO_KEY
 
-    from logic.utils import normalize_answers as REAL_NORMALIZE_ANSWERS
-    normalize_answers = REAL_NORMALIZE_ANSWERS
+    # from logic.Intake_Tag_DefinitionsAssumptions import (
+        # TAG_DEFS,  # unused here but fine if present
+        # derive_tags as REAL_DERIVE_TAGS,
+        # SECTOR_BASELINE_ASSUMPTIONS as REAL_SECTOR_BASELINE_ASSUMPTIONS,
+    # )
+   # derive_tags = REAL_DERIVE_TAGS
+    #SECTOR_BASELINE_ASSUMPTIONS = REAL_SECTOR_BASELINE_ASSUMPTIONS
 
-    from logic.scoringnextstepsgenerator import run_screening 
-    run_screening = RUN_SCREENING
+   # from logic.utils import normalize_answers as REAL_NORMALIZE_ANSWERS
+   # normalize_answers = REAL_NORMALIZE_ANSWERS
+
+   # from logic.scoringnextstepsgenerator import run_screening 
+   # run_screening = RUN_SCREENING
 
     
 except Exception as e:
@@ -154,7 +169,7 @@ except Exception as e:
 # ------------------------------------------------------------
 # Streamlit UI
 # ------------------------------------------------------------
-st.title:("Notes about the beta version")
+st.title("Notes about the beta version")
 st.caption("""
 This Sustainability Readiness tool is a fast, decision-grade diagnostic designed to help SME and supplier companies understand whether
 they are prepared for current sustainability, human rights, and climate-related reporting expectations — especially under the EU Corporate
