@@ -5,6 +5,25 @@
 
 
 import streamlit as st
+
+
+PASSWORD = "betastream"
+
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
+if not st.session_state.authenticated:
+    pwd = st.text_input("Enter password", type="password")
+    if pwd == PASSWORD:
+        st.session_state.authenticated = True
+        st.rerun()
+    st.stop()
+
+# ---- real app below ----
+st.title("Private Diagnostic")
+
+
+
 import inspect
 
 import os
