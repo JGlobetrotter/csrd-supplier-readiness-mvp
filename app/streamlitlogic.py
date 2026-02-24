@@ -157,7 +157,7 @@ except Exception as e:
 
 st.caption""
 This Sustainability Readiness tool is a fast, decision-grade diagnostic designed to help SME and supplier companies understand whether
-they are prepared for today’s sustainability, human rights, and climate-related reporting expectations — especially under the EU Corporate
+they are prepared for current sustainability, human rights, and climate-related reporting expectations — especially under the EU Corporate
 Sustainability Reporting Directive (CSRD).
 
 Rather than asking suppliers to “do everything,” the tool focuses on what actually matters:
