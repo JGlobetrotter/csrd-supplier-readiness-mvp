@@ -186,7 +186,7 @@ if "applied_tags" not in st.session_state:
 if "normalized" not in st.session_state:
     st.session_state.normalized = {}
 
-st.header("Section A: Supplier Profile")
+st.header("Supplier Intake")
 
 # Render questions
 for question_text, options in INTAKE_QUESTIONS.items():
